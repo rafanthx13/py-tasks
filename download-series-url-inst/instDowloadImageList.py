@@ -17,15 +17,18 @@ import string
 # https://www.instagram.com/p/B_-jfkVAAY2/
 # https://www.instagram.com/p/CAL2KKjFjbD/
 
-# Ultimo Download: 15/10/2020
+# Ultimo Download: 21/02/2021
 
 alist = """
-
-
+macho
+.....
 """
+
 alist = alist.split("\n")
 alist.pop(0)
 alist.pop()
+
+print(alist)
 
 def randomString(stringLength=8):
     letters = string.ascii_lowercase

@@ -20,6 +20,7 @@ import string
 # Ultimo Download: 21/02/2021
 
 alist = """
+
 portugues
 https://www.instagram.com/p/CL2Avs1Dk86/
 https://www.instagram.com/p/CL43kmRD6GX/
@@ -91,7 +92,6 @@ https://www.instagram.com/p/CMdcyRnJWPP/
 https://www.instagram.com/p/CMdlNGnpm2f/
 https://www.instagram.com/p/CMHrrS-pjBT/
 
-.....
 """
 
 alist = alist.split("\n")

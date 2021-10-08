@@ -125,12 +125,15 @@ def download_image_video(url, prefix):
 
     # url = input("Please enter image URL: ")
     x = re.match(r'^(https:)[/][/]www.([^/]+[.])*instagram.com', url)
-
+    
     try:
         if x:
+            print('Request URL ...', url)
             request_image = requests.get(url)
             src = request_image.content.decode('utf-8')
+            print('src', src)
             check_type = re.search(r'<meta name="medium" content=[\'"]?([^\'" >]+)', src)
+            print('check_type', check_type)
             check_type_f = check_type.group()
             final = re.sub('<meta name="medium" content="', '', check_type_f)
 
@@ -177,8 +180,8 @@ def download_image_video(url, prefix):
                     exit()  
         else:
             print("Entered URL is not an instagram.com URL.")
-    except AttributeError:
-        print("Unknown URL")
+    except Exception as e:
+        print(e)
 
 if connection() == True:
     prefix = ""

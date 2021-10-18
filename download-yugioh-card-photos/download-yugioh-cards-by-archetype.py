@@ -1,3 +1,8 @@
+""""
+Baixar Fotos do site yugioh.fandom.com
++ É necessário inserir manualmente nesse arquivo
+""""
+
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd

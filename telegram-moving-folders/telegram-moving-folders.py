@@ -58,20 +58,20 @@ root_directory = os.getcwd().split(separator)[-1]
 root_directory
 
 
-# In[23]:
+# In[6]:
 
 
 all_folders = get_all_folders()
 all_folders
 
 
-# In[19]:
+# In[7]:
 
 
 all_folders
 
 
-# In[10]:
+# In[8]:
 
 
 nw_folder = './new-folder'
@@ -81,7 +81,7 @@ if(not os.path.isdir(nw_folder)):
     os.mkdir(nw_folder + separator + 'photos')
 
 
-# In[ ]:
+# In[9]:
 
 
 # os.rename("path/to/current/file.foo", "path/to/new/destination/for/file.foo")
@@ -89,7 +89,7 @@ if(not os.path.isdir(nw_folder)):
 
 # ## Iterate on each folder
 
-# In[24]:
+# In[15]:
 
 
 new_photo_path =  nw_folder + separator + 'photos'
@@ -113,14 +113,14 @@ for fold in all_folders:
         print('ERROR')
         print(err)
     # Videos
-    videos_path = './'+ fold + separator + 'videos'
+    videos_path = './'+ fold + separator + 'video_files'
     list_videos = list( filter(lambda file: not 'thumb' in file, list_files(videos_path)) )
     if(len(list_videos) == 0):
         print('\t\tEmpty Videos')
     try:
         for video in list_videos:
             the_video = video[2:].split(separator)[-1]
-            os.rename(video, new_video_path + separator + the_video)
+            os.rename(video, new_videos_path + separator + the_video)
             print('\t', the_video)
     except Exception as err:
         print('ERROR')

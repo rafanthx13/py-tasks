@@ -23,14 +23,6 @@ try:
 except Exception as err:
 ```
 
-## ITERATE DICT
-
-for key, value in adict.items()
-
-for key in adict.keys()
-
-for key in adict.values()
-
 # Snippets de manipulação de pastas
 
 ```python
@@ -62,10 +54,4 @@ def list_files(dir):
             r.append(os.path.join(root, name))
     return r
 ```
-
-# PANDAS TASKS
-
-## Rename Data Frame
-
-// df.rename(columns = dict, inplace = False)
 

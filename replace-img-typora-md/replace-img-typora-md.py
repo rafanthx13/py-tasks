@@ -50,10 +50,20 @@ afile = sys.argv[1]
 
 c  = 0
 for line in fileinput.input(afile, inplace=True):
+	# Inserir path para a imagem
     if(line.startswith('img-')):
         print(root_dir + line.strip() + extension + final_string, end='')
         c = c + 1
+	# Colocar trecho de CTRL+SHIF+K do Typora (trecho DE UMA LINHA código)
+    # Para cada linha que começa com $ (símbolo para indicar o terminal
+    # Lembre-se: '$' é para trecho de códdigo de APENAS UMA ÚNICA LINHA
+    elif(line.startswith('$')):
+        print("````programing_language")
+        print(line, end='')
+        print("````")
     else:
         print(line, end='')
+	
+
 print(c, 'lines modify', '\nSuccess')
 

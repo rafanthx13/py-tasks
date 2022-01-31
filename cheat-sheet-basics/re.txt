@@ -1,0 +1,22 @@
+df = df.loc[:, df.isnull().mean() < .8]
+
+def delete_column_threshold_nan(adf, threshold=0.4):
+    """
+    Delete colums from @adf where are @threshold of NaN
+    """
+    adf_before = adf.columns.tolist()
+    len_before = len(df_rubi_columns_before)
+    adf = adf.loc[:, adf.isnull().mean() < threshold]
+    adf_after = adf.columns.tolist()
+    len_after = len(df_rubi_columns_after)
+    print('Excluiu:', len_before - len_after,
+     'colunas, que equivale a',
+      "{:3.2%}".format(len_after/len_before  ),
+     'dos dados')
+    print('Excluiu as seguinte colunas:')
+    alist = []
+    for el in adf_before:
+        if(el not in adf_after):
+            alist.append(el)
+    print(alist)
+    return adf
